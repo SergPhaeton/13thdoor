@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Триннадцатая дверь</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
         body {
             margin: 0;
             padding: 0;
             background: black;
             color: white;
-            font-family: 'Courier New', monospace;
+            font-family: 'UnifrakturMaguntia', cursive;
             overflow: hidden;
             text-align: center;
             position: relative;
@@ -23,34 +24,46 @@
             z-index: 2;
         }
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: glitchText 1.5s infinite alternate;
+            animation: glitch 1.5s infinite alternate;
         }
-        @keyframes glitchText {
-            0% { text-shadow: 3px 3px red; }
-            50% { text-shadow: -3px -3px blue; }
-            100% { text-shadow: 3px -3px green; }
+        @keyframes glitch {
+            0% { text-shadow: 5px 5px red; }
+            50% { text-shadow: -5px -5px blue; }
+            100% { text-shadow: 5px -5px green; }
         }
         .glitch-bg {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('https://images.pexels.com/photos/1670825/pexels-photo-1670825.jpeg') center/cover no-repeat;
+            background: url('https://images.pexels.com/photos/2775884/pexels-photo-2775884.jpeg') center/cover no-repeat;
             filter: grayscale(100%) blur(5px);
-            opacity: 0.3;
+            opacity: 0.4;
+            animation: flicker 3s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.5; }
+            100% { opacity: 0.3; }
         }
         .enter-button {
             font-size: 1.5em;
             background: none;
             color: white;
             border: 2px solid white;
-            padding: 10px 20px;
+            padding: 15px 25px;
             cursor: pointer;
             transition: 0.3s;
             position: relative;
             z-index: 3;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         .enter-button:hover {
             background: white;
